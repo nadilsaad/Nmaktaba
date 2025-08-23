@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home page -->
+  <url>
+    <loc>https://nadilsaad.github.io/nadil-ISM-site/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Example for other pages if you add them -->
+  <!--
+  <url>
+    <loc>https://nadilsaad.github.io/nadil-ISM-site/about.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://nadilsaad.github.io/nadil-ISM-site/notes.html</loc>
+    <priority>0.9</priority>
+  </url>
+  -->
+
+</urlset>
