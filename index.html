@@ -1,80 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nadil Site</title>
+<style>
+/* Base */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+body{line-height:1.6;color:#fff;scroll-behavior:smooth;transition: background 0.3s, color 0.3s;}
+a{text-decoration:none;color:inherit;}
 
-   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'/>
-  <title>Nadil-ISM materials </title>
-  <meta name="description" content="Official ISM site by Nadil. Access learning materials online. No stress.">
-  <meta name="keywords" content="ISM, ISM Notes, Nadil, First Year, Programming Notes, ISM Tanzania, ISM Year One">
-  <meta name="author" content="Nadil Saad">
-  <!--for social media sharing-->
-  <link rel="canonical" href="Nadilsaad.github.io/Nadil-ISM-site/notes."/>
-  <meta property="og:type" content="website"/>
-   <meta property="og:url" content="Nadilsaad.github.io/Nadil-ISM-site/notes."/>
-        <meta property="og:site_name" content="Nadil-ISM-site"/>
-  <meta property="og:title" content="Nadil-ISM materials">
-  <meta property="og:description" content="Access all learning materials">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f6f8;
-      color: #333;
-    }
-    header {
-      background-color: #004080;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    main {
-      text-align: center;
-      padding: 50px 20px;
-    }
-    h1 {
-      font-size: 36px;
-    }
-    p {
-      font-size: 18px;
-      max-width: 600px;
-      margin: 20px auto;
-    }
-    .btn {
-      background-color: #007bff;
-      color: white;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .btn:hover {
-      background-color: #0056b3;
-    }
-    footer {
-      margin-top: 50px;
-      font-size: 14px;
-      color: #777;
-    }
-  </style>
+/* Navigation */
+nav{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1rem 2rem; background:#1f2937; color:#fff; position:sticky; top:0; z-index:1000;
+}
+nav .logo{font-size:1.5rem; font-weight:bold;}
+nav ul{display:flex; list-style:none;}
+nav ul li{margin-left:1.5rem;}
+nav ul li a{color:#fff; padding:0.5rem; transition:0.3s;}
+nav ul li a:hover{color:#facc15;}
+.menu-toggle{display:none; font-size:1.5rem; cursor:pointer;}
+@media(max-width:768px){
+    nav ul{flex-direction:column; background:#1f2937; position:absolute; top:60px; right:-200px; width:200px; transition:0.3s;}
+    nav ul.show{right:0;}
+    nav ul li{margin:1rem 0; text-align:center;}
+    .menu-toggle{display:block;}
+}
+
+/* Buttons */
+.btn{
+    display:inline-block;
+    padding:0.8rem 1.5rem;
+    margin-top:1rem;
+    background:#facc15;
+    color:#1f2937;
+    border-radius:8px;
+    font-weight:bold;
+    transition:0.3s;
+}
+.btn:hover{background:#eab308;color:#fff;}
+
+/* Sections */
+section{padding:80px 20px; min-height:100vh; background: linear-gradient(135deg, #4f46e5, #f472b6); color:#fff;}
+h2{text-align:center;margin-bottom:2rem;font-size:2rem;}
+
+/* Cards */
+.card{
+    max-width:600px;
+    margin:0 auto 2rem auto;
+    background: rgba(255,255,255,0.9);
+    color:#1f2937;
+    padding:1.5rem;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity:0;
+    transform:translateY(30px);
+    animation: fadeUp 1s forwards;
+}
+.card:hover{
+    transform:scale(1.05);
+    box-shadow:0 12px 25px rgba(0,0,0,0.25);
+}
+
+/* Viewer unique layout */
+.viewer-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap:1.5rem;
+    max-width:1000px;
+    margin:0 auto;
+}
+.viewer-card{
+    background: rgba(255,255,255,0.95);
+    border-radius:12px;
+    padding:1rem;
+    box-shadow:0 6px 18px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.viewer-card:hover{
+    transform: scale(1.03);
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+.viewer-card iframe{
+    width:100%;
+    height:200px;
+    border:none;
+    border-radius:8px;
+}
+
+/* Contact */
+.contact-info{text-align:center;}
+.contact-info p{margin-bottom:1rem;}
+
+/* Footer */
+footer{text-align:center; padding:1rem; background:#1f2937; color:#fff; margin-top:2rem;}
+
+/* Animations */
+@keyframes fadeUp{
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* Dark mode */
+.dark-mode{background:#111; color:#f3f4f6;}
+.dark-mode nav{background:#111;}
+.dark-mode footer{background:#111;}
+</style>
 </head>
 <body>
-  <header>
-    <h1>Nadil ISM First Year</h1>
-  </header>
-  <main>
-    <h2>Welcome!</h2>
-    <p>
-      Access all ISM First Year notes and materials online. No downloads – study straight from your browser, anytime, anywhere.
-    </p>
-    <a href="notes.html" class="btn">View Notes</a>
-  </main>
-  <footer>
-    &copy; 2025 Nadil ISM. All rights reserved.
-  </footer>
+
+<!-- Navigation -->
+<nav>
+    <div class="logo">Nadil ISM</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#notes">Notes</a></li>
+        <li><a href="#viewer">Viewer</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" onclick="toggleDarkMode()">🌓</a></li>
+    </ul>
+</nav>
+
+<!-- Home -->
+<section id="home">
+    <h1>Welcome to Nadil Site</h1>
+    <p>Access ISM Year 1 lecture notes and materials online easily. “Start exploring the notes now and boost your understanding. With easy access to all materials, you can study smarter, stay ahead in your classes, and achieve your academic goals. Learning has never been this simple!”</p>
+    <a href="#notes" class="btn">Go to Notes</a>
+</section>
+
+<!-- About -->
+<section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+        <p>Hello! I am <strong>Nadil Saad. Founder & CEO of Nadil Site</strong>, a student passionate about Information Systems Management. I created this platform to help first-year ISM students access lecture notes and materials online quickly and conveniently. "We started this platform specifically for first-year ISM students to make accessing lecture notes and materials easier and more convenient. Our goal is to gradually expand and cover other faculties and departments, ensuring that every student has the resources they need to succeed academically. This is just the beginning of our journey to support learning across the university."</p>
+    </div>
+</section>
+
+<!-- Notes -->
+<section id="notes">
+    <h2>Notes</h2>
+    <div class="card">
+        <p>Click below to access all available lecture notes and materials:</p>
+        <a href="notes.html" class="btn">Go to Notes</a>
+    </div>
+</section>
+
+<!-- Viewer -->
+<section id="viewer">
+    <h2>Viewer</h2>
+    <div class="viewer-container">
+        <div class="viewer-card">
+            <p>Introduction to Information Systems</p>
+            <iframe src="https://docs.google.com/presentation/d/EXAMPLE1/embed?start=false&loop=false&delayms=3000" allowfullscreen></iframe>
+        </div>
+        <div class="viewer-card">
+            <p>Database Systems Basics</p>
+            <iframe src="https://docs.google.com/presentation/d/EXAMPLE2/embed?start=false&loop=false&delayms=3000" allowfullscreen></iframe>
+        </div>
+        <div class="viewer-card">
+            <p>Networking Fundamentals</p>
+            <iframe src="https://docs.google.com/presentation/d/EXAMPLE3/embed?start=false&loop=false&delayms=3000" allowfullscreen></iframe>
+        </div>
+        <!-- Add more viewer cards as needed -->
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-info card">
+        <p>Email: <a href="mailto:nadilsaad17@gmail.com">nadilsaad17@gmail.com</a></p>
+        
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 Nadil Site. All rights reserved.
+</footer>
+
+<script>
+function toggleMenu(){
+    const nav = document.getElementById('nav-links');
+    nav.classList.toggle('show');
+}
+function toggleDarkMode(){
+    document.body.classList.toggle('dark-mode');
+}
+</script>
+
 </body>
 </html>
