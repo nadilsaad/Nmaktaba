@@ -102,10 +102,32 @@ footer{text-align:center; padding:1rem; background:#1f2937; color:#fff; margin-t
     to{opacity:1; transform:translateY(0);}
 }
 
-/* Dark mode */
-.dark-mode{background:#111; color:#f3f4f6;}
-.dark-mode nav{background:#111;}
-.dark-mode footer{background:#111;}
+/* Dark mode global */
+.dark-mode {
+  background: #111;     /* background ya page yote */
+  color: #f3f4f6;       /* text color ya default */
+}
+
+/* Elements zote unazotaka ziwe dark */
+.dark-mode nav,
+.dark-mode footer,
+.dark-mode header,
+.dark-mode section,
+.dark-mode main,
+.dark-mode article,
+.dark-mode aside,
+.dark-mode .card,
+.dark-mode p,
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6,
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode button {
+  background: #111;
+  color: #f3f4f6;
+  border-color: #333; /* kama kuna borders */
+}
+
+    
 </style>
 </head>
 <body>
